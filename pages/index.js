@@ -1,5 +1,6 @@
+import Link from "next/link";
 import Layout from "../components/Layout";
-import { skills, experiences } from "../profile";
+import { skills, experiences, projects } from "../profile";
 
 const Index = () => {
   return (
@@ -20,12 +21,15 @@ const Index = () => {
                 <h1>Martín Morlio</h1>
                 <h3>Full Stack Developer</h3>
                 <p>
-                  lorem ipsum dolor sit amet, consectetur adip bien, si usted
-                  quiere generar el tradicional texto de Lorem Ipsum para no
-                  distraer al lector con el contenido mientras que mira su
-                  diseño, escriba y luego presione Intro. Automátic
+                  Soy una persona apasionada por la tecnología, trato de
+                  mantenerme al tanto siempre, me gusta estudiar y aprender
+                  constantemente. Me gusta trabajar en equipo, me considero
+                  proactivo y dinámico, con un buen manejo de presión y de
+                  grupo.
                 </p>
-                <a href="/hireme">Contrátame</a>
+                <Link legacyBehavior href="/blog">
+                  <a>Contáctame</a>
+                </Link>
               </div>
             </div>
           </div>
@@ -84,11 +88,20 @@ const Index = () => {
               <div className="col-md-12">
                 <h1 className="text-center text-light">Portafolio</h1>
               </div>
-              <div className="col-md-4">
-                <div className="card">
-                  <img src="" alt="" className="img-fluid"/>
+              {projects.map((pr, i) => (
+                <div className="col-md-4 p-2" key={i}>
+                  <div className="card h-100">
+                    <div className="overflow">
+                      <img src={pr.image} alt="" className="card-img-top" />
+                    </div>
+                    <div className="card-body">
+                      <h3>{pr.name}</h3>
+                      <p>{pr.description}</p>
+                      <a href={pr.link}>Conoce más</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
