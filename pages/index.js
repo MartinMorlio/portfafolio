@@ -27,7 +27,7 @@ const Index = () => {
                   proactivo y dinámico, con un buen manejo de presión y de
                   grupo.
                 </p>
-                <Link legacyBehavior href="/blog">
+                <Link legacyBehavior href="/github">
                   <a>Contáctame</a>
                 </Link>
               </div>

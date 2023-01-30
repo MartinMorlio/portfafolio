@@ -8,7 +8,16 @@
     transition: all 0.2 ease-in-out;
 }
 
-
 .overflow .card-img-top:hover {
     transform: scale(1.8);
+}
+
+/* Class of nprogress, in body */
+#nprogress .bar {
+    background: aquamarine;
+}
+
+#nprogress .spinner-icon {
+    border-top-color: aquamarine;
+    border-left-color: aquamarine;
 }

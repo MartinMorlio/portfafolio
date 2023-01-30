@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import nProgress from "nprogress";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, footer = true }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -24,13 +24,17 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <main className="container py-4">{children}</main>
-      <footer className="bg-dark text-light text-center">
+      {
+        footer && (
+          <footer className="bg-dark text-light text-center">
         <div className="container p-4">
           <h1>&copy; Portafolio de Martín Morlio</h1>
           <p>2001 - {new Date().getFullYear()}</p>
           <p>Todos los derechos reservados.</p>
         </div>
       </footer>
+        )
+      }
     </>
   );
 };
